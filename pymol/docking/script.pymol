@@ -1,0 +1,25 @@
+set_view (\
+    -0.351531863,   -0.356432110,    0.865665793,\
+     0.092260681,    0.906992614,    0.410912752,\
+    -0.931617916,    0.224315733,   -0.285952091,\
+    -0.000016568,   -0.000008836,  -65.365653992,\
+    12.744472504,   21.128410339,    9.103177071,\
+   -12.575906754,  143.307250977,  -20.000000000 )
+
+set cartoon_transparency, 0.7
+
+set cartoon_color, wheat
+
+util.cbaw
+
+select vina, vinaPose-*
+
+select hem, resn HEM
+
+select sidechains, sidechain within 5 of vina
+
+remove hydrogens
+
+set stick_radius, 0.1, sidechains
+
+
