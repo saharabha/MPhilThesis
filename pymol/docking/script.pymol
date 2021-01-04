@@ -1,10 +1,13 @@
+import bonds
+
+
 set_view (\
-    -0.351531863,   -0.356432110,    0.865665793,\
-     0.092260681,    0.906992614,    0.410912752,\
-    -0.931617916,    0.224315733,   -0.285952091,\
-    -0.000016568,   -0.000008836,  -65.365653992,\
+    -0.312286973,   -0.052075632,    0.948556721,\
+     0.358030170,    0.918417215,    0.168289050,\
+    -0.879935443,    0.392167211,   -0.268165499,\
+    -0.000016568,   -0.000008836,  -68.211845398,\
     12.744472504,   21.128410339,    9.103177071,\
-   -12.575906754,  143.307250977,  -20.000000000 )
+    -9.729696274,  146.153457642,  -20.000000000 )
 
 set cartoon_transparency, 0.7
 
@@ -12,14 +15,26 @@ set cartoon_color, wheat
 
 util.cbaw
 
+util.cbak, pocket
+
 select vina, vinaPose-*
 
 select hem, resn HEM
 
-select sidechains, sidechain within 5 of vina
+select sidechains, sidechain within 3.5 of vina
 
 remove hydrogens
 
-set stick_radius, 0.1, sidechains
+set stick_radius, 0.05, sidechains
 
+set stick_radius, 0.07, vina*
 
+set stick_transparency, 0.2, vina*
+
+show sticks, resi 75
+
+show sticks, resi 188
+
+set stick_transparency, 0, hem
+
+set stick_radius, 0.1, hem
